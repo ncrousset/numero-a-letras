@@ -1,4 +1,8 @@
 <?php
+
+namespace ;
+
+
 /**
  * Clase que implementa un coversor de números
  * a letras.
@@ -10,7 +14,6 @@
  * @author AxiaCore S.A.S
  *
  */
-
 class NumeroALetras
 {
     private static $UNIDADES = [
@@ -144,5 +147,38 @@ class NumeroALetras
         }
 
         return $output;
+    }
+
+
+    /**
+     * Por ahorar solo funciona con la cedular de republica dominicana
+     *
+     * @param  string $numero numero de cedula electorar
+     * @return string 
+     */
+    public static function numeroID($numero)
+    {
+        self::$UNIDADES[0] = "CERO";
+
+        $stringID = "";
+
+        // remplaza caulquier cosa que no sea numero
+        $filtraNumero = preg_replace('/[ˆ0-9]+/', '', $numero);
+        
+        foreach (explode('', $filtraNumero) as $num) {
+            $num = (int) $num;
+
+            $stringID .= self::convertir((int) $num) . " ";
+        }
+
+        $id = trim($stringID);
+
+        // Agragar el gion 
+        $stringID[] = substr($id, 0, 3);
+        $stringID[] = substr($id, 3, 7);
+        $stringID[] = substr($id, 10, 1);
+
+        return implode(" - ", $stringID);
+
     }
 }
