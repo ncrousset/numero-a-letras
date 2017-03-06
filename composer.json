@@ -1,5 +1,5 @@
 {
-  "name": "arielcr/numero-a-letras",
+  "name": "ncrousset/numero-a-letras",
   "description": "Convierte un número a su valor correspondiente en letras.",
   "keywords": ["convertir", "numero", "letras"],
   "homepage": "https://github.com/arielcr/numero-a-letras",
@@ -9,14 +9,19 @@
       "name": "Ariel Orozco",
       "email": "bassplayer85@gmail.com",
       "homepage": "http://arielorozco.com"
+    },
+    {
+      "name": "Rudys Natanael Acosta",
+      "email": "natanael926@gmail.com",
+      "homepage": "https://github.com/ncrousset/Number-To-Letter"
     }
   ],
   "require": {
     "php": ">=5.4"
   },
   "autoload": {
-    "psr-0": {
-      "NumeroALetras": "src/"
+    "psr-4": {
+      "NumeroALetras\\": "src/NumeroALetras/"
     }
   }
 }
