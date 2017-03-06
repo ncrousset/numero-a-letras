@@ -1,9 +1,15 @@
 {
   "name": "ncrousset/numero-a-letras",
-  "description": "Convierte un número a su valor correspondiente en letras y algunos plus mas.",
+  "description": "Convierte un número a su valor correspondiente en letras.",
   "keywords": ["convertir", "numero", "letras"],
   "homepage": "https://github.com/ncrousset/numero-a-letras",
   "license" : "MIT",
+  "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/arielcr/numero-a-letras"
+        }
+  ],
   "authors" : [
     {
       "name": "Rudys Natanael Acosta",
