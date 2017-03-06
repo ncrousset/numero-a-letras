@@ -1,6 +1,6 @@
 <?php
 
-namespace ;
+namespace NumeroALetras;
 
 
 /**
@@ -121,7 +121,7 @@ class NumeroALetras
             $valor_convertido = $converted . strtoupper($moneda) . ' CON ' . $decimales . ' ' . strtoupper($centimos);
         }
 
-        return $valor_convertido;
+        return trim($valor_convertido);
     }
 
     private static function convertGroup($n)
