@@ -1,15 +1,10 @@
 {
   "name": "ncrousset/numero-a-letras",
-  "description": "Convierte un número a su valor correspondiente en letras.",
+  "description": "Convierte un número a su valor correspondiente en letras y algunos plus mas.",
   "keywords": ["convertir", "numero", "letras"],
-  "homepage": "https://github.com/arielcr/numero-a-letras",
+  "homepage": "https://github.com/ncrousset/numero-a-letras",
   "license" : "MIT",
   "authors" : [
-    {
-      "name": "Ariel Orozco",
-      "email": "bassplayer85@gmail.com",
-      "homepage": "http://arielorozco.com"
-    },
     {
       "name": "Rudys Natanael Acosta",
       "email": "natanael926@gmail.com",
