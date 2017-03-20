@@ -159,26 +159,28 @@ class NumeroALetras
     public static function numeroID($numero)
     {
         self::$UNIDADES[0] = "CERO";
+        self::$UNIDADES[1] = "UNO";
 
         $stringID = "";
 
         // remplaza caulquier cosa que no sea numero
-        $filtraNumero = preg_replace('/[ˆ0-9]+/', '', $numero);
-        
-        foreach (explode('', $filtraNumero) as $num) {
-            $num = (int) $num;
+        $filtraNumero = preg_replace('/-/', '', $numero);
 
-            $stringID .= self::convertir((int) $num) . " ";
+        $filtraNumero = [substr($filtraNumero, 0, 3), substr($filtraNumero, 3, 7), substr($filtraNumero, 10, 1)];
+        $filtraNumero = implode("-", $filtraNumero);
+
+        foreach (str_split($filtraNumero) as $num) {
+
+            if($num === "-") {
+                $stringID .= "- ";
+                continue;
+            }
+
+            $num = (int) $num;
+            $stringID .=  self::$UNIDADES[(int)$num] . " ";
         }
 
-        $id = trim($stringID);
-
-        // Agragar el gion 
-        $stringID[] = substr($id, 0, 3);
-        $stringID[] = substr($id, 3, 7);
-        $stringID[] = substr($id, 10, 1);
-
-        return implode(" - ", $stringID);
+        return $stringID;
 
     }
 }
